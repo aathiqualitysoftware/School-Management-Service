@@ -32,4 +32,9 @@ public class MasterDataAllResponse {
     List<AllMasterDataResponse> modeRelationList;
     List<AllMasterDataResponse> roleCategoryList;
     List<AllMasterDataResponse> educationTypeList;
+    List<AllMasterDataResponse> feeCollectionTypeList;
+    List<AllMasterDataResponse> feeHeadList;
+    List<AllMasterDataResponse> discountTypeList;
+    List<AllMasterDataResponse> sessionList;
+    List<AllMasterDataResponse> paymentModeList;
 }

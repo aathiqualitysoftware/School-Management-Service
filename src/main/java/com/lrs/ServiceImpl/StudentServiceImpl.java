@@ -191,6 +191,21 @@ public class StudentServiceImpl implements StudentService {
         List<AllMasterDataResponse> educationType = allMasterData.stream()
                 .filter(x->x.getTypeName().equalsIgnoreCase("EDUCATIONTYPE")).toList();
         masterDataAllResponse.setEducationTypeList(educationType);
+        List<AllMasterDataResponse> feeCollectionType = allMasterData.stream()
+                .filter(x->x.getTypeName().equalsIgnoreCase("FEECOLLECTIONTYPE")).toList();
+        masterDataAllResponse.setFeeCollectionTypeList(feeCollectionType);
+        List<AllMasterDataResponse> feeHeadMaster = allMasterData.stream()
+                .filter(x->x.getTypeName().equalsIgnoreCase("FEEHEADMASTER")).toList();
+        masterDataAllResponse.setFeeHeadList(feeHeadMaster);
+        List<AllMasterDataResponse> discountType = allMasterData.stream()
+                .filter(x->x.getTypeName().equalsIgnoreCase("DISCOUNTTYPE")).toList();
+        masterDataAllResponse.setDiscountTypeList(discountType);
+        List<AllMasterDataResponse> session = allMasterData.stream()
+                .filter(x->x.getTypeName().equalsIgnoreCase("SESSION")).toList();
+        masterDataAllResponse.setSessionList(session);
+        List<AllMasterDataResponse> paymentMode = allMasterData.stream()
+                .filter(x->x.getTypeName().equalsIgnoreCase("PAYMENTMODE")).toList();
+        masterDataAllResponse.setPaymentModeList(paymentMode);
 
         return masterDataAllResponse;
     }
