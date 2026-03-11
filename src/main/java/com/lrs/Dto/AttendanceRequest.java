@@ -10,5 +10,5 @@ import java.util.Date;
 public class AttendanceRequest {
     private Date attendanceDate;
     private Boolean attendanceStatus;
-    private String remarks;
+    private Long session;
     }

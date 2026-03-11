@@ -5,6 +5,7 @@ import com.lrs.Entity.Attendance;
 import com.lrs.Repository.AttendanceRepository;
 import com.lrs.Repository.StudRepository;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -24,8 +25,9 @@ public class AttendanceService {
     public Attendance save(Attendance attendance) {
         return repository.save(attendance);
     }
+
     public List<Attendance> bulk(List<Attendance> attendance) {
-        for (Attendance data:attendance) {
+        for (Attendance data : attendance) {
             repository.save(data);
         }
         return attendance;
@@ -62,21 +64,22 @@ public class AttendanceService {
     public List<Attendance> getByDate(LocalDate date) {
         return repository.findByAttendanceDate(date);
     }
-    public List<Attendance> getByDateAndStudent(LocalDate date,Long classId,Long sectionId) {
-        List<Attendance> attendances = repository.findAttendanceByClassSectionAndDate(Math.toIntExact(classId), Math.toIntExact(sectionId),date);
-        if(attendances.isEmpty()){
-          List<Stud> stud = studRepository.findByClassIdAndSectionId(Integer.parseInt(String.valueOf(classId)),Integer.parseInt(String.valueOf(sectionId)));
-       if(!stud.isEmpty()){
-           for (Stud data:stud) {
-               Attendance attendance = new Attendance();
-               attendance.setStudentId(Long.valueOf(data.getStudentId()));
-               attendance.setAttendanceDate(new Date());
-               attendance.setRemarks("");
-               attendance.setAttendanceStatus(null);
-               attendances.add(attendance);
-           }
 
-       }
+    public List<Attendance> getByDateAndStudent(LocalDate date, Long classId, Long sectionId) {
+        List<Attendance> attendances = repository.findAttendanceByClassSectionAndDate(Math.toIntExact(classId), Math.toIntExact(sectionId), date);
+        if (attendances.isEmpty()) {
+            List<Stud> stud = studRepository.findByClassIdAndSectionId(Integer.parseInt(String.valueOf(classId)), Integer.parseInt(String.valueOf(sectionId)));
+            if (!stud.isEmpty()) {
+                for (Stud data : stud) {
+                    Attendance attendance = new Attendance();
+                    attendance.setStudentId(Long.valueOf(data.getStudentId()));
+                    attendance.setAttendanceDate(new Date());
+                    attendance.setSession(Long.valueOf(0));
+                    attendance.setAttendanceStatus(null);
+                    attendances.add(attendance);
+                }
+
+            }
         }
         return attendances;
     }

@@ -55,7 +55,7 @@ public class AttendanceServiceImpl implements AttendanceServiceTmp {
     @Override
     public Attendance attendanceUpdate(Attendance attendanceExist, AttendanceUpdate attendanceUpdate) throws ServiceException {
         attendanceExist.setAttendanceStatus(attendanceUpdate.getAttendanceStatus());
-        attendanceExist.setRemarks(attendanceUpdate.getRemarks());
+        attendanceExist.setSession(attendanceUpdate.getSession());
         // if you want update extra field add here
         attendanceExist.setUpdatedBy(SecurityUtils.getLogInUserName());
         attendanceExist.setUpdatedDateTime(new Timestamp(System.currentTimeMillis()));

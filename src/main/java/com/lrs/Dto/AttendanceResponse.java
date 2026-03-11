@@ -16,7 +16,7 @@ public class AttendanceResponse {
     private Long studentId;
     private Date attendanceDate;
     private Boolean attendanceStatus;
-    private String remarks;
+    private Long session;
     private String createdBy;
     private Timestamp createdDateTime;
     private String updatedBy;

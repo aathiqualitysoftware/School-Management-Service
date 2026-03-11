@@ -8,5 +8,5 @@ import java.util.Date;
 public class AttendanceUpdate {
     private Long id;
     private Boolean attendanceStatus;
-    private String remarks;
+    private Long session;
     }

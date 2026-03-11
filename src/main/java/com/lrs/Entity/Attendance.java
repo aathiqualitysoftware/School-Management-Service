@@ -20,8 +20,8 @@ public class Attendance {
     @Column(name = "attendance_status")
     @Convert(converter = org.hibernate.type.NumericBooleanConverter.class)
     private Boolean attendanceStatus;
-    @Column(name = "remarks")
-    private String remarks;
+    @Column(name = "session")
+    private Long session;
     @Column(name = "createdBy")
     private String createdBy;
     @Column(name = "createdAt")
