@@ -206,6 +206,9 @@ public class StudentServiceImpl implements StudentService {
         List<AllMasterDataResponse> paymentMode = allMasterData.stream()
                 .filter(x->x.getTypeName().equalsIgnoreCase("PAYMENTMODE")).toList();
         masterDataAllResponse.setPaymentModeList(paymentMode);
+        List<AllMasterDataResponse> expenseHead = allMasterData.stream()
+                .filter(x->x.getTypeName().equalsIgnoreCase("EXPENSEHEAD")).toList();
+        masterDataAllResponse.setExpenseHeadList(expenseHead);
 
         return masterDataAllResponse;
     }

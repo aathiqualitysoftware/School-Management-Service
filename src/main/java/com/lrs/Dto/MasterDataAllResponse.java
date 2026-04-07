@@ -37,4 +37,5 @@ public class MasterDataAllResponse {
     List<AllMasterDataResponse> discountTypeList;
     List<AllMasterDataResponse> sessionList;
     List<AllMasterDataResponse> paymentModeList;
+    List<AllMasterDataResponse> expenseHeadList;
 }
